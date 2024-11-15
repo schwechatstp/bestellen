@@ -119,6 +119,7 @@
                         <select class="product" required>
                         <option value="">Bitte auswählen</option>
                         <option value="Semmel+Extra">Semmel+Extra</option>
+                        <option value="Leere Semmel">Leere Semmel</option>
                         <option value="Semmel+Salami">Semmel+Salami</option>
                         <option value="Semmel+Kantwurst">Semmel+Kantwurst</option>
                         <option value="Semmel+Gauda">Semmel+Gauda</option>
@@ -134,6 +135,7 @@
                         <option value="Buttercroissant">Buttercroissant</option>
                         <option value="Marillenkrapfen">Marillenkrapfen</option>
                         <option value="Sonstiges">Sonstiges</option>
+                        <option value="Leere Semmel">Leere Semmel</option>
                             <!-- weitere Optionen -->
                         </select>
                     </div>
@@ -225,6 +227,7 @@
                         <option value="Buttercroissant">Buttercroissant</option>
                         <option value="Marillenkrapfen">Marillenkrapfen</option>
                         <option value="Sonstiges">Sonstiges</option>
+                        <option value="Leere Semmel">Leere Semmel</option>
                     <!-- weitere Optionen -->
                 </select>
             </div>
@@ -258,27 +261,36 @@
         document.getElementById('productsContainer').appendChild(productGroup);
     }
 
-    function submitOrder() {
-        const name = document.getElementById('name').value;
-        const deliveryDate = new Date(document.getElementById('deliveryDate').value);
-        const formattedDate = `${deliveryDate.getDate()}.${deliveryDate.getMonth() + 1}.${deliveryDate.getFullYear()}`;
-        const notes = document.getElementById('notes').value;
+  function submitOrder() {
+    const name = document.getElementById('name').value;
+    const deliveryDate = new Date(document.getElementById('deliveryDate').value);
+    const formattedDate = `${deliveryDate.getDate()}.${deliveryDate.getMonth() + 1}.${deliveryDate.getFullYear()}`;
+    const notes = document.getElementById('notes').value;
 
-        let products = [];
-        document.querySelectorAll('.product-group').forEach((group, index) => {
-            const product = group.querySelector('.product').value;
-            const ingredient1 = group.querySelector('.ingredient1').value;
-            const ingredient2 = group.querySelector('.ingredient2').style.display !== 'none' ? group.querySelector('.ingredient2').value : '';
-            const quantity = group.querySelector('.quantity').value;
+    let products = [];
+    document.querySelectorAll('.product-group').forEach((group, index) => {
+        const product = group.querySelector('.product').value;
+        const quantity = group.querySelector('.quantity').value;
+        const ingredient1 = group.querySelector('.ingredient1').value;
+        const ingredient2 = group.querySelector('.ingredient2').style.display !== 'none' ? group.querySelector('.ingredient2').value : '';
 
-            products.push(`Produkt ${index + 1}: ${product}, Menge: ${quantity}, Zutaten: ${ingredient1}${ingredient2 ? ' // ' + ingredient2 : ''}`);
-        });
+        // Nur hinzufügen, wenn ein Produkt ausgewählt wurde
+        if (product) {
+            let productDetails = `Produkt ${index + 1}: ${product}, Menge: ${quantity}`;
+            if (ingredient1 || ingredient2) {
+                productDetails += `, Zutaten: ${ingredient1}${ingredient2 ? ' // ' + ingredient2 : ''}`;
+            }
+            products.push(productDetails);
+        }
+    });
 
-        const subject = `Neue Bestellung von ${name} am ${formattedDate}`;
-        const body = `Name: ${name}\n${products.join('\n')}\nLieferdatum: ${formattedDate}\nAnmerkungen: ${notes}`;
+    // Betreff und Body der E-Mail erstellen
+    const subject = `Neue Bestellung von ${name} am ${formattedDate}`;
+    const body = `Name: ${name}\n${products.length > 0 ? products.join('\n') + '\n' : ''}Lieferdatum: ${formattedDate}\nAnmerkungen: ${notes}`;
 
-        window.location.href = `mailto:oeamtc-bestellung@gmx.at?cc=stp.schwechat@oeamtc.at&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    }
+    // Mailto-Link öffnen
+    window.location.href = `mailto:oeamtc-bestellung@gmx.at?cc=stp.schwechat@oeamtc.at&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
 </script>
 
 </body>
