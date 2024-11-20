@@ -281,7 +281,7 @@
 
         const subject = `Neue Bestellung von ${name}`;
         const body = `Name: ${name}\nProdukte:\n${products.join('\n')}\nLieferdatum: ${deliveryDate}\nAnmerkungen: ${notes}`;
-        window.location.href = `mailto:bestellung@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        window.location.href = `mailto:oeamtc-bestellung@gmx.at?cc=stp.schwechat@oeamtc.at(subject)}&body=${encodeURIComponent(body)}`;
     }
 
     function openFullScreen() {
