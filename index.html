@@ -258,31 +258,66 @@
         document.getElementById('productsContainer').appendChild(productGroup);
     }
 
-    function submitOrder() {
-        const name = document.getElementById('name').value;
-        const deliveryDate = document.getElementById('deliveryDate').value;
-        const notes = document.getElementById('notes').value;
+function submitOrder() {
+    const name = document.getElementById('name').value;
+    const deliveryDate = document.getElementById('deliveryDate').value;
+    const notes = document.getElementById('notes').value;
 
-        if (!name || !deliveryDate) {
-            alert('Bitte füllen Sie alle Pflichtfelder aus.');
-            return;
-        }
-
-        const products = Array.from(document.querySelectorAll('.product-group')).map((group, index) => {
-            const product = group.querySelector('.product').value;
-            const quantity = group.querySelector('.quantity').value;
-            return `Produkt ${index + 1}: ${product}, Menge: ${quantity}`;
-        });
-
-        if (!products.length) {
-            alert('Bitte mindestens ein Produkt angeben.');
-            return;
-        }
-
-        const subject = `Neue Bestellung von ${name}`;
-        const body = `Name: ${name}\nProdukte:\n${products.join('\n')}\nLieferdatum: ${deliveryDate}\nAnmerkungen: ${notes}`;
-        window.location.href = `mailto:oeamtc-bestellung@gmx.at?cc=stp.schwechat@oeamtc.at(subject)}&body=${encodeURIComponent(body)}`;
+    if (!name || !deliveryDate) {
+        alert('Bitte füllen Sie alle Pflichtfelder aus.');
+        return;
     }
+
+    // Formatieren des Lieferdatums
+    const formattedDate = formatDate(new Date(deliveryDate));
+
+    const products = Array.from(document.querySelectorAll('.product-group')).map((group, index) => {
+        const product = group.querySelector('.product').value;
+        const quantity = group.querySelector('.quantity').value;
+
+        // Zutaten 1 und 2 abfragen
+        const ingredient1 = group.querySelector('.ingredient1').value;
+        const ingredient2 = group.querySelector('.ingredient2').value;
+
+        // String für Produkt zusammenstellen
+        let productDetails = `Produkt ${index + 1}: ${product}, Menge: ${quantity}`;
+
+        // Zutaten hinzufügen, falls sie ausgewählt wurden
+        if (ingredient1 && ingredient1 !== 'Keine') {
+            productDetails += `, Zutat 1: ${ingredient1}`;
+        }
+        if (ingredient2 && ingredient2 !== 'Keine') {
+            productDetails += `, Zutat 2: ${ingredient2}`;
+        }
+
+        return productDetails;
+    });
+
+    if (!products.length) {
+        alert('Bitte mindestens ein Produkt angeben.');
+        return;
+    }
+
+    const subject = `Neue Bestellung von ${name} für den ${formattedDate}`;  // Datum auch im Betreff
+    const body = `Name: ${name}\nProdukte:\n${products.join('\n')}\nLieferdatum: ${formattedDate}\nAnmerkungen: ${notes}`;
+    window.location.href = `mailto:oeamtc-bestellung@gmx.at?cc=stp.schwechat@oeamtc.at&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+}
+
+// Funktion zum Formatieren des Datums
+function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');  // Monate sind nullbasiert
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;  // Format "20.11.2024"
+}
+
+// Funktion zum Formatieren des Datums
+function formatDate(date) {
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');  // Monate sind nullbasiert
+    const year = date.getFullYear();
+    return `${day}.${month}.${year}`;  // Format "20.11.2024"
+}
 
     function openFullScreen() {
         const iframe = document.getElementById('pdfFrame');
