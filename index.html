@@ -65,58 +65,59 @@
     </style>
 </head>
 <body>
-
 <div class="container">
+    <!-- Formular -->
     <div class="form-container">
-        <form id="orderForm">
             <h1>Bestellformular</h1>
             <p>Bitte vermerke unter <b>"Anmerkungen"</b>, falls du einen speziellen Gepäckartikel<br> magst oder bestimmte Zigarettenmarken bevorzugst. 
+																										  
                 <br>Beachte bitte, dass <b>Zigaretten ausschließlich BAR bezahlt</b> 
                 <br>werden können. 
                 <br>Bestellfrist  <b>bis 07:30 GLEICHER TAG</b> <br>
+			
                 <a href="https://tinyurl.com/2xj6ujc7" target="_blank">Aktuelles Flugblatt</a>
-            </p>
+            </p>				
 
-            <!-- Name Dropdown -->
-            <div class="form-group">
-                <label for="name"><b>Name:</b></label><br>
-                <select id="name" required>
-                    <option value="">Bitte auswählen</option>
-                    <option value="170 Pirkmayer">170 Pirkmayer</option>
-                    <option value="171 Lukic">171 Lukic</option>
-                    <option value="172 Macho">172 Macho</option>
-                    <option value="173 Greicha">173 Greicha</option>
-                    <option value="174 Bombera">174 Bombera</option>
-                    <option value="175 Danzinger">175 Danzinger</option>
-                    <option value="176 Sejdi">176 Sejdi</option>
-                    <option value="177 Omerovic">177 Omerovic</option>
-                    <option value="178 Schneider">178 Schneider</option>
-                    <option value="179 Petrovic">179 Petrovic</option>
-                    <option value="180 Bracher">180 Bracher</option>
-                    <option value="181 Varga">181 Varga</option>
-                    <option value="182 Mujanovic">182 Mujanovic</option>
-                    <option value="183 Deutenhauser">183 Deutenhauser</option>
-                    <option value="184 Divkovic">184 Divkovic</option>
-                    <option value="185 Mikula">185 Mikula</option>
-                    <option value="186 Führich">186 Führich</option>
-                    <option value="187 Schönstädt">187 Schönstädt</option>
-                    <option value="188 Kutschera">188 Kutschera</option>
-                    <option value="189 Dizdarevic">189 Dizdarevic</option>
-                    <option value="190 Krempel">190 Krempel</option>
-                    <option value="191 Vinc">191 Vinc</option>
-                    <option value="192 Metzker">192 Metzker</option>
-                    <option value="193 Obradovic">193 Obradovic</option>
-                    <!-- weitere Optionen -->
-                </select>
-            </div>
+        <!-- Name -->
+        <div class="form-group">
+            <label for="name"><b>Name:</b></label><br>
+            <select id="name" required>
+                <option value="">Bitte auswählen</option>
+                <option value="170 Pirkmayer">170 Pirkmayer</option>
+                <option value="171 Lukic">171 Lukic</option>
+                <option value="172 Macho">172 Macho</option>
+                <option value="173 Greicha">173 Greicha</option>
+                <option value="174 Bombera">174 Bombera</option>
+                <option value="175 Danzinger">175 Danzinger</option>
+                <option value="176 Sejdi">176 Sejdi</option>
+                <option value="177 Omerovic">177 Omerovic</option>
+                <option value="178 Schneider">178 Schneider</option>
+                <option value="179 Petrovic">179 Petrovic</option>
+                <option value="180 Bracher">180 Bracher</option>
+                <option value="181 Varga">181 Varga</option>
+                <option value="182 Mujanovic">182 Mujanovic</option>
+                <option value="183 Deutenhauser">183 Deutenhauser</option>
+                <option value="184 Divkovic">184 Divkovic</option>
+                <option value="185 Mikula">185 Mikula</option>
+                <option value="186 Führich">186 Führich</option>
+                <option value="187 Schönstädt">187 Schönstädt</option>
+                <option value="188 Kutschera">188 Kutschera</option>
+                <option value="189 Dizdarevic">189 Dizdarevic</option>
+                <option value="190 Krempel">190 Krempel</option>
+                <option value="191 Vinc">191 Vinc</option>
+                <option value="192 Metzker">192 Metzker</option>
+                <option value="193 Obradovic">193 Obradovic</option>																
+                <!-- Weitere Optionen -->
+            </select>
+        </div>
 
-            <!-- Produktfelder Container -->
-            <div id="productsContainer">
-                <div class="product-group">
-                    <h3>Produkt 1</h3>
-                    <div class="form-group">
-                        <label><b>Produkt:</b></label><br>
-                        <select class="product" required>
+        <!-- Produkte -->
+        <div id="productsContainer">
+            <div class="product-group">
+                <h3>Produkt 1</h3>
+                <div class="form-group">
+                    <label><b>Produkt:</b></label><br>
+                    <select class="product" required>
                         <option value="">Bitte auswählen</option>
                         <option value="Semmel+Extra">Semmel+Extra</option>
                         <option value="Semmel+Salami">Semmel+Salami</option>
@@ -133,61 +134,63 @@
                         <option value="Schokocroissant">Schokocroissant</option>
                         <option value="Buttercroissant">Buttercroissant</option>
                         <option value="Marillenkrapfen">Marillenkrapfen</option>
-                        <option value="Sonstiges">Sonstiges</option>
-                            <!-- weitere Optionen -->
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label><b>Zutat 1:</b></label><br>
-                        <select class="ingredient1">
-                            <option value="">Keine</option>
-                            <option value="Gurkal">Gurkal</option>
-                            <option value="Käse">Käse</option>
-                            <!-- weitere Optionen -->
-                        </select>
-                    </div>
-                    <div class="form-group" style="display: none;">
-                        <label><b>Zutat 2:</b></label><br>
-                        <select class="ingredient2">
-                            <option value="">Keine</option>
-                            <option value="Gurkal">Gurkal</option>
-                            <option value="Käse">Käse</option>
-                            <!-- weitere Optionen -->
-                        </select>
-                    </div>
-                    <button type="button" class="add-button" onclick="toggleIngredient2(this)">Zutat 2 hinzufügen</button>
-                    <div class="form-group">
-                        <label><b>Menge:</b></label><br>
-                        <select class="quantity" required>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                        </select>
-                    </div>
+                        <option value="Sonstiges">Sonstiges</option>																	  
+                        <!-- Weitere Optionen -->
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label><b>Zutat 1:</b></label><br>
+                    <select class="ingredient1">
+                        <option value="">Keine</option>
+                        <option value="Gurkal">Gurkal</option>
+						<option value="Käse">Käse</option>
+                        <!-- Weitere Optionen -->
+                    </select>
+                </div>
+                <div class="form-group" style="display: none;">
+                    <label><b>Zutat 2:</b></label><br>
+                    <select class="ingredient2">
+                        <option value="">Keine</option>
+                        <option value="Gurkal">Gurkal</option>
+						<option value="Käse">Käse</option>
+                        <!-- Weitere Optionen -->
+                    </select>
+                </div>
+                <button type="button" class="add-button" onclick="toggleIngredient2(this)">Zutat 2 hinzufügen</button>
+                <div class="form-group">
+                    <label><b>Menge:</b></label><br>
+                    <select class="quantity" required>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option>
+                    </select>
                 </div>
             </div>
-            <button type="button" class="add-button" onclick="addProduct()">Weitere Produkte hinzufügen</button>
+        </div>
+        <button type="button" class="add-button" onclick="addProduct()">Weitere Produkte hinzufügen</button>
 
-            <!-- Lieferdatum -->
-            <div class="form-group">
-                <label for="deliveryDate"><b>Lieferdatum:</b></label><br>
-                <input type="date" id="deliveryDate" required>
-            </div>
+        <!-- Lieferdatum -->
+        <div class="form-group">
+            <label for="deliveryDate"><b>Lieferdatum:</b></label><br>
+            <input type="date" id="deliveryDate" required>
+        </div>
 
-            <!-- Anmerkungen -->
-            <div class="form-group">
-                <label for="notes"><b>Anmerkungen:</b></label><br>
-                <textarea id="notes" rows="4" style="width: 80%; font-size: 16px;"></textarea>
-            </div>
+        <!-- Anmerkungen -->
+        <div class="form-group">
+            <label for="notes"><b>Anmerkungen:</b></label><br>
+            <textarea id="notes" rows="4"></textarea>
+        </div>
 
-            <!-- Bestellen Button -->
-            <button type="button" id="orderButton" onclick="submitOrder()">Bestellen</button>
-        </form>
+        <!-- Bestellen -->
+        <button type="button" id="orderButton" onclick="submitOrder()">Bestellen</button>
     </div>
 
-    <!-- PDF-Viewer rechts in der Mitte -->
+    <!-- PDF-Viewer -->
     <div class="pdf-viewer">
         <h2>Aktuelles Flugblatt</h2>
-        <iframe src="https://drive.google.com/file/d/1dlHj-A6Vdtd48dAxzfsSzCxs6YC35FvS/preview" width="100%" height="800px" allow="autoplay"></iframe>
+        <iframe id="pdfFrame" width="100%" height="600px" style="border: none;"></iframe>
+        <button onclick="openFullScreen()">Vollbild öffnen</button>
     </div>
 </div>
 
@@ -210,40 +213,37 @@
                 <select class="product" required>
                     <option value="">Bitte auswählen</option>
                     <option value="Semmel+Extra">Semmel+Extra</option>
-                        <option value="Semmel+Salami">Semmel+Salami</option>
-                        <option value="Semmel+Kantwurst">Semmel+Kantwurst</option>
-                        <option value="Semmel+Gauda">Semmel+Gauda</option>
-                        <option value="Semmel+Schnitzel">Semmel+Schnitzel nur Dienstag</option>
-                        <option value="Semmel+Faschierte Laibchen">Semmel+Faschierte Laibchen nur Donnerstag</option>
-                        <option value="Semmel+Leberkäsesemmel">Semmel+Leberkäsesemmel</option>
-                        <option value="Topfenkolatsche - ohne Rosinen">Topfenkolatsche - ohne Rosinen</option>
-                        <option value="Nussschnecke - ohne Rosinen">Nussschnecke - ohne Rosinen</option>
-                        <option value="Briochekipferl">Briochekipferl</option>
-                        <option value="mürbes Kipferl">mürbes Kipferl</option>
-                        <option value="Topfen Ribisel Stangerl">Topfen Ribisel Stangerl</option>
-                        <option value="Schokocroissant">Schokocroissant</option>
-                        <option value="Buttercroissant">Buttercroissant</option>
-                        <option value="Marillenkrapfen">Marillenkrapfen</option>
-                        <option value="Sonstiges">Sonstiges</option>
-                    <!-- weitere Optionen -->
+                     <option value="Semmel+Salami">Semmel+Salami</option>
+                     <option value="Semmel+Kantwurst">Semmel+Kantwurst</option>
+                     <option value="Semmel+Gauda">Semmel+Gauda</option>
+                     <option value="Semmel+Schnitzel">Semmel+Schnitzel nur Dienstag</option>
+                     <option value="Semmel+Faschierte Laibchen">Semmel+Faschierte Laibchen nur Donnerstag</option>
+                     <option value="Semmel+Leberkäsesemmel">Semmel+Leberkäsesemmel</option>
+                     <option value="Topfenkolatsche - ohne Rosinen">Topfenkolatsche - ohne Rosinen</option>
+                     <option value="Nussschnecke - ohne Rosinen">Nussschnecke - ohne Rosinen</option>
+                     <option value="Briochekipferl">Briochekipferl</option>
+                     <option value="mürbes Kipferl">mürbes Kipferl</option>
+                     <option value="Topfen Ribisel Stangerl">Topfen Ribisel Stangerl</option>
+                     <option value="Schokocroissant">Schokocroissant</option>
+                     <option value="Buttercroissant">Buttercroissant</option>
+                     <option value="Marillenkrapfen">Marillenkrapfen</option>
+                     <option value="Sonstiges">Sonstiges</option>																			  
                 </select>
             </div>
             <div class="form-group">
                 <label>Zutat 1:</label><br>
                 <select class="ingredient1">
                     <option value="">Keine</option>
-                            <option value="Gurkal">Gurkal</option>
-                            <option value="Käse">Käse</option>
-                    <!-- weitere Optionen -->
+                    <option value="Gurkal">Gurkal</option>
+					<option value="Käse">Käse</option>
                 </select>
             </div>
             <div class="form-group" style="display: none;">
                 <label>Zutat 2:</label><br>
                 <select class="ingredient2">
                     <option value="">Keine</option>
-                            <option value="Gurkal">Gurkal</option>
-                            <option value="Käse">Käse</option>
-                    <!-- weitere Optionen -->
+                    <option value="Gurkal">Gurkal</option>
+					<option value="Käse">Käse</option>
                 </select>
             </div>
             <button type="button" class="add-button" onclick="toggleIngredient2(this)">Zutat 2 hinzufügen</button>
@@ -260,26 +260,77 @@
 
     function submitOrder() {
         const name = document.getElementById('name').value;
-        const deliveryDate = new Date(document.getElementById('deliveryDate').value);
-        const formattedDate = `${deliveryDate.getDate()}.${deliveryDate.getMonth() + 1}.${deliveryDate.getFullYear()}`;
+        const deliveryDate = document.getElementById('deliveryDate').value;
         const notes = document.getElementById('notes').value;
 
-        let products = [];
-        document.querySelectorAll('.product-group').forEach((group, index) => {
-            const product = group.querySelector('.product').value;
-            const ingredient1 = group.querySelector('.ingredient1').value;
-            const ingredient2 = group.querySelector('.ingredient2').style.display !== 'none' ? group.querySelector('.ingredient2').value : '';
-            const quantity = group.querySelector('.quantity').value;
+        if (!name || !deliveryDate) {
+            alert('Bitte füllen Sie alle Pflichtfelder aus.');
+            return;
+        }
 
-            products.push(`Produkt ${index + 1}: ${product}, Menge: ${quantity}, Zutaten: ${ingredient1}${ingredient2 ? ' // ' + ingredient2 : ''}`);
+        const products = Array.from(document.querySelectorAll('.product-group')).map((group, index) => {
+            const product = group.querySelector('.product').value;
+            const quantity = group.querySelector('.quantity').value;
+            return `Produkt ${index + 1}: ${product}, Menge: ${quantity}`;
         });
 
-        const subject = `Neue Bestellung von ${name} am ${formattedDate}`;
-        const body = `Name: ${name}\n${products.join('\n')}\nLieferdatum: ${formattedDate}\nAnmerkungen: ${notes}`;
+        if (!products.length) {
+            alert('Bitte mindestens ein Produkt angeben.');
+            return;
+        }
 
-        window.location.href = `mailto:oeamtc-bestellung@gmx.at?cc=stp.schwechat@oeamtc.at&subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+        const subject = `Neue Bestellung von ${name}`;
+        const body = `Name: ${name}\nProdukte:\n${products.join('\n')}\nLieferdatum: ${deliveryDate}\nAnmerkungen: ${notes}`;
+        window.location.href = `mailto:bestellung@example.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
     }
-</script>
 
+    function openFullScreen() {
+        const iframe = document.getElementById('pdfFrame');
+        if (iframe.requestFullscreen) iframe.requestFullscreen();
+    }
+
+function updatePDFLink() {
+    const now = new Date();
+    let year = now.getFullYear();
+
+    // Berechnung der Kalenderwoche
+    const startOfYear = new Date(year, 0, 1);
+    const daysSinceStart = Math.floor((now - startOfYear) / (24 * 60 * 60 * 1000));
+    let currentWeek = Math.ceil((daysSinceStart + startOfYear.getDay() + 1) / 7);
+
+    // Prüfen, ob der Zeitpunkt nach Sonntag 18:00 ist
+    const currentDay = now.getDay(); // 0 = Sonntag, 6 = Samstag
+    const isAfterSunday6pm = currentDay === 0 && now.getHours() >= 18;
+
+    // Woche anpassen, falls nach Sonntag 18:00 Uhr
+    if (isAfterSunday6pm) {
+        currentWeek += 1;
+    }
+
+    // Handling für Jahreswechsel
+    const maxWeeksThisYear = getWeeksInYear(year);
+    if (currentWeek > maxWeeksThisYear) {
+        currentWeek = 1; // Zurücksetzen auf Woche 1
+        year += 1;       // Auf das nächste Jahr wechseln
+    }
+
+    // Dynamischer Link
+    const pdfUrl = `https://web.kastner.at/KASTNER_NahundFrisch/Flugblatt/${year}/${currentWeek}_NuF/`;
+    document.getElementById('pdfFrame').src = pdfUrl;
+}
+
+function getWeeksInYear(year) {
+    const lastDayOfYear = new Date(year, 11, 31); // 31. Dezember
+    const dayOfWeek = lastDayOfYear.getDay(); // Wochentag des letzten Tages
+    const daysInYear = (isLeapYear(year) ? 366 : 365);
+    return Math.ceil((daysInYear + dayOfWeek) / 7);
+}
+
+function isLeapYear(year) {
+    return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+}
+
+window.onload = updatePDFLink;
+</script>
 </body>
 </html>
